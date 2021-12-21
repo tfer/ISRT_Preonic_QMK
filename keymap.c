@@ -23,37 +23,37 @@ enum tap_dance_codes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [0] = LAYOUT(
-    KC_GRV,KC_1,KC_2,KC_3,KC_4,KC_5,KC_6,KC_7,KC_8,KC_9,KC_0,KC_BSPC
-    KC_TAB,KC_Y,KC_C,KC_L,KC_M,KC_K,KC_Z,KC_F,KC_U,TD(DANCE_2),KC_BSPC,KC_DEL
-    KC_ESC,KC_I,KC_S,MT(MOD_LALT,KC_R),MT(MOD_LGUI,KC_T),KC_G,KC_P,MT(MOD_RGUI,KC_N),MT(MOD_RALT,KC_E),KC_A,KC_O,KC_QUOT
-    KC_LSFT,KC_Q,KC_V,KC_W,KC_D,KC_J,KC_B,KC_H,TD(DANCE_3),TD(DANCE_1),KC_X,MT(MOD_RSHFT,KC_ENT)
-    OSM(MOD_RCTL),K_NO,K_NO,K_NO,TO(1),OSM(MOD_LSFT),OSM(MOD_RCTL),MT(MOD_MEH,KC_SPACE),KC_LEFT,KC_DOWN,KC_UP,KC_RGHT
+  [0] = LAYOUT_preonic_grid(
+    KC_GRV       , KC_1         , KC_2               , KC_3               , KC_4                   , KC_5                 , KC_6             , KC_7                  , KC_8                , KC_9             , KC_0       , KC_BSPC,
+    KC_TAB       , KC_Y         , KC_C               , KC_L               , KC_M                   , KC_K                 , KC_Z             , KC_F                  , KC_U                , TD(DANCE_2)      , KC_BSPC    , KC_DEL,
+    KC_ESC       , KC_I         , KC_S               , MT(MOD_LALT,KC_R)  , MT(MOD_LGUI,KC_T)      , KC_G                 , KC_P             , MT(MOD_RGUI,KC_N)     , MT(MOD_RALT,KC_E)   , KC_A             , KC_O       , KC_QUOT,
+    KC_LSFT      , KC_Q         , KC_V               , KC_W               , KC_D                   , KC_J                 , KC_B             , KC_H                  , TD(DANCE_3)         , TD(DANCE_1)      , KC_X       , MT(MOD_RSFT,KC_ENT),
+    OSM(MOD_RCTL), OSM(MOD_RCTL), KC_LALT            , KC_LGUI            , TO(1)                  , OSM(MOD_LSFT)        , OSM(MOD_RCTL)    , MT(MOD_MEH,KC_SPACE)  , KC_LEFT             , KC_DOWN          , KC_UP      , KC_RGHT
+),
+
+  [1] = LAYOUT_preonic_grid(
+    _______      , _______      , _______            , _______            , _______                , _______              , _______          , _______               , _______             , _______          , _______    , _______,
+    _______      , KC_ESCAPE    , KC_AT              , LSFT(KC_3)         , TD(DANCE_31)           , KC_PERC              , KC_CIRC          , KC_AMPR               , KC_ASTR             , KC_SCOLON        , KC_BSPC    , _______,
+    _______      , KC_TAB       , KC_EQL             , LALT(KC_RBRACKET)  , LALT(LSFT(KC_RBRACKET)), TD(DANCE_32)         , TD(BKSL_HME)     , LSFT(KC_LBRC)         , LSFT(KC_RBRC)       , TD(PIPE_END)     , KC_ENTER   , _______,
+    _______      , KC_TILD      , TD(DANCE_33)       , LALT(KC_LBRACKET)  , LALT(LSFT(KC_LBRACKET)), KC_DQUO              , KC_LBRC          , KC_LPRN               , KC_RPRN             , KC_RBRC          , TO(3)      , _______,
+    _______      , _______      , _______            , _______            , TO(2)                  , OSM(MOD_LSFT)        , KC_RALT          , TO(0)                 , _______             , _______          , _______    , _______
+ ),
+
+  [2] = LAYOUT_preonic_grid(
+    _______      , _______      , _______            , _______            , _______                , _______              , _______          , _______               , _______             , _______          , _______    , _______,
+    _______      , KC_ESCAPE    , KC_MEDIA_PLAY_PAUSE, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK    , LSFT(KC_MINS)        , KC_MINS          , KC_7                  , KC_8                , KC_9             , _______    , _______,
+    _______      , KC_TAB       , _______            , KC_AUDIO_VOL_DOWN  , KC_AUDIO_VOL_UP        , LSFT(KC_EQL)         , KC_EQL           , KC_4                  , KC_5                , KC_6             , KC_ENTER   , _______,
+    _______      , RESET        , KC_KP_ASTERISK     , KC_BRIGHTNESS_DOWN , KC_BRIGHTNESS_UP       , KC_KP_DOT            , KC_0             , KC_1                  , KC_2                , KC_3             , _______    , _______,
+    _______      , _______      , _______            , _______            , TO(2)                  , KC_LGUI              , KC_RALT          , TO(0)                 , _______             , _______          , _______    , _______
   ),
 
-  [1] = LAYOUT(
-    K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO
-    K_NO,KC_ESCAPE,KC_AT,LSFT(KC_3),TD(DANCE_31),KC_PERC,KC_CIRC,KC_AMPR,KC_ASTR,KC_SCOLON,KC_BSPC,K_NO
-    K_NO,KC_TAB,KC_EQL,LALT(KC_RBRACKET),LALT(LSFT(KC_RBRACKET)),TD(DANCE_32),TD(BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),TD(PIPE_END),KC_ENTER,K_NO
-    K_NO,KC_TILD,TD(DANCE_33),LALT(KC_LBRACKET),LALT(LSFT(KC_LBRACKET)),KC_DQUO,KC_LBRC,KC_LPRN,KC_RPRN,KC_RBRC,TO(3),K_NO
-    K_NO,K_NO,K_NO,K_NO,TO(2) ,OSM(MOD_LSFT),KC_RALT,TO(0),K_NO,K_NO,K_NO,K_NO
-  ),
-
-  [2] = LAYOUT(
-    K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO
-    K_NO,KC_ESCAPE,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,LSFT(KC_MINS),KC_MINS,KC_7,KC_8,KC_9,KC_TRANSPARENT,,K_NO
-    K_NO,KC_TAB,KC_TRANSPARENT,KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,LSFT(KC_EQL),KC_EQL,KC_4,KC_5,KC_6,KC_ENTER,K_NO
-    K_NO,RESET,KC_KP_ASTERISK,KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_KP_DOT,KC_0,KC_1,KC_2,KC_3,KC_TRANSPARENT,K_NO
-    K_NO,K_NO,K_NO,K_NO,TO(2),KC_LGUI,KC_RALT,TO(0),K_NO,K_NO,K_NO,K_NO
-  ),
-
-  [3] = LAYOUT(
-    K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO,K_NO
-    K_NO,TD(DANCE_54),KC_MS_WH_LEFT,KC_MS_UP,KC_MS_WH_RIGHT,TD(DANCE_55),LGUI(KC_LBRACKET),LCTL(LSFT(KC_TAB)),RCTL(KC_TAB),LGUI(KC_RBRACKET),KC_TRANSPARENT,K_NO
-    K_NO,TD(DANCE_56),KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,MT(MOD_LGUI,KC_DEL),TD(DANCE_60),MT(MOD_RGUI,KC_DOWN),MT(MOD_RALT,KC_UP),TD(DANCE_63),KC_ENTER,K_NO
-    K_NO,TD(DANCE_58),KC_MS_BTN2,KC_MS_WH_UP,KC_MS_WH_DOWN,KC_TRANSPARENT,KC_MS_BTN1,KC_MS_ACCEL0,KC_MS_ACCEL1,KC_MS_ACCEL2,KC_NO ,K_NO
-    K_NO,K_NO,K_NO,K_NO,TO(1),KC_TRANSPARENT,KC_RALT,TO(0),K_NO,K_NO,K_NO,K_NO
-  )
+  [3] = LAYOUT_preonic_grid(
+    _______      , _______      , _______            , _______            , _______                , _______              , _______          , _______               , _______             , _______          , _______    , _______,
+    _______      , TD(DANCE_54) , KC_MS_WH_LEFT      , KC_MS_UP           , KC_MS_WH_RIGHT         , TD(DANCE_55)         , LGUI(KC_LBRACKET), LCTL(LSFT(KC_TAB))    , RCTL(KC_TAB)        , LGUI(KC_RBRACKET), _______    , _______,
+    _______      , TD(DANCE_56) , KC_MS_LEFT         , KC_MS_DOWN         , KC_MS_RIGHT            , MT(MOD_LGUI,KC_DEL)  , TD(DANCE_60)     , MT(MOD_RGUI,KC_DOWN)  , MT(MOD_RALT,KC_UP)  , TD(DANCE_63)     , KC_ENTER   , _______,
+    _______      , TD(DANCE_58) , KC_MS_BTN2         , KC_MS_WH_UP        , KC_MS_WH_DOWN          , _______              , KC_MS_BTN1       , KC_MS_ACCEL0          , KC_MS_ACCEL1        , KC_MS_ACCEL2     , _______    , _______,
+    _______      , _______      , _______            , _______            , TO(1)                  , _______              , KC_RALT          , TO(0)                 , _______             , _______          , _______    , _______
+ )
 };
 
 
